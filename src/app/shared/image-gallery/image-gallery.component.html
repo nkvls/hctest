@@ -1,0 +1,21 @@
+<ngb-carousel (slide)="onSlide($event)" #carousel>
+        <ng-template ngbSlide *ngFor="let product of products" id="{{product.productId}}">
+        <div class="container">
+                <div class="row">
+                <div class="col"><img src="{{product.imageUrl}}" alt="{{product.productName}}" style="margin:20px;padding:20px;"></div>
+                <div class="col">
+                        <p><h2>{{product.productName}} </h2>
+
+                                <ul *ngIf="product.properties">
+                                        <li *ngFor="let property of product.properties">{{property}}</li>
+                                </ul>
+
+                                <h2>{{product.price |  currency:'GBP':true:'2.2'}} </h2>
+                                        
+                                <button >ADD TO BAG</button>
+                        
+                </div>
+                </div>      
+        </div>
+        </ng-template>
+</ngb-carousel>

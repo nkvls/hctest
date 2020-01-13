@@ -1,0 +1,23 @@
+   <div style="padding:10px;">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <app-selected-shirt [SelectedShirt]="selectedShirt" [SelectedTie]="selectedTie" [SelectedCuff]="selectedCuff"></app-selected-shirt>
+        </div>
+        <div class="col">
+        <div class="row">
+            <div class="col">
+              <app-image-gallery direction="Horizantal" [products]="ties"
+                (selectedProductChanged)='onTieSelectionChanged($event)'></app-image-gallery>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <app-image-gallery direction="Vertical" [products]='cuffs'
+                  (selectedProductChanged)='onCuffSelectionChanged($event)'></app-image-gallery>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
